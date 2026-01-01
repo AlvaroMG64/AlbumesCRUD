@@ -17,21 +17,25 @@ class Album
         $this->conn = $db;
     }
 
+    // READ ALL
     public function read()
     {
-        $query = "SELECT * FROM " . $this->table_name . " ORDER BY idAlbum ASC";
+        $query = "SELECT * FROM " . $this->table_name . " ORDER BY fecha_lanzamiento DESC";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
     }
 
+    // CREATE
     public function create()
     {
         $query = "INSERT INTO " . $this->table_name . "
-        SET titulo=:titulo, artista=:artista, genero=:genero,
-            fecha_lanzamiento=:fecha_lanzamiento,
-            num_canciones=:num_canciones,
-            es_explicit=:es_explicit";
+            SET titulo=:titulo,
+                artista=:artista,
+                genero=:genero,
+                fecha_lanzamiento=:fecha_lanzamiento,
+                num_canciones=:num_canciones,
+                es_explicit=:es_explicit";
 
         $stmt = $this->conn->prepare($query);
 
@@ -45,11 +49,12 @@ class Album
         return $stmt->execute();
     }
 
+    // READ ONE
     public function readOne()
     {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE idAlbum = ? LIMIT 0,1";
+        $query = "SELECT * FROM " . $this->table_name . " WHERE idAlbum = ? LIMIT 1";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(1, $this->idAlbum);
+        $stmt->bindParam(1, $this->idAlbum, PDO::PARAM_INT);
         $stmt->execute();
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -64,14 +69,17 @@ class Album
         }
     }
 
+    // UPDATE
     public function update()
     {
         $query = "UPDATE " . $this->table_name . "
-        SET titulo=:titulo, artista=:artista, genero=:genero,
-            fecha_lanzamiento=:fecha_lanzamiento,
-            num_canciones=:num_canciones,
-            es_explicit=:es_explicit
-        WHERE idAlbum=:idAlbum";
+            SET titulo=:titulo,
+                artista=:artista,
+                genero=:genero,
+                fecha_lanzamiento=:fecha_lanzamiento,
+                num_canciones=:num_canciones,
+                es_explicit=:es_explicit
+            WHERE idAlbum=:idAlbum";
 
         $stmt = $this->conn->prepare($query);
 
@@ -86,11 +94,13 @@ class Album
         return $stmt->execute();
     }
 
+    // DELETE
     public function delete()
     {
         $query = "DELETE FROM " . $this->table_name . " WHERE idAlbum = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $this->idAlbum, PDO::PARAM_INT);
+
         return $stmt->execute();
     }
 }

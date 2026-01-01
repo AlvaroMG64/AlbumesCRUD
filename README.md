@@ -1,6 +1,6 @@
 # CRUD de Álbumes de Música en PHP usando MVC
 
-Este proyecto consiste en una aplicación web desarrollada en PHP que implementa un CRUD (Create, Read, Update, Delete) siguiendo el patrón de arquitectura MVC (Modelo–Vista–Controlador). La aplicación permite gestionar álbumes de música almacenados en una base de datos MySQL. Para la conexión con la base de datos se utiliza PDO y para el diseño de la interfaz se emplea Bootstrap, garantizando una correcta visualización en distintos dispositivos.
+Este proyecto consiste en una aplicación web desarrollada en PHP que implementa un CRUD (Create, Read, Update, Delete) siguiendo el patrón de arquitectura MVC (Modelo–Vista–Controlador). La aplicación permite gestionar álbumes de música almacenados en una base de datos MySQL. Para la conexión con la base de datos se utiliza PDO y para el diseño de la interfaz se emplea Bootstrap 5, garantizando una correcta visualización en distintos dispositivos.
 
 El proyecto se ha desarrollado como práctica académica y está preparado para poder integrarse posteriormente con un sistema de autenticación de usuarios.
 
@@ -16,6 +16,7 @@ La aplicación permite realizar las siguientes operaciones:
 - Eliminar álbumes de la base de datos
 - Validar los formularios en el lado cliente
 - Sanitizar los datos recibidos en el lado servidor
+- Mostrar visualmente si un álbum contiene contenido explícito
 - Mostrar una interfaz responsive mediante Bootstrap
 
 ---
@@ -75,7 +76,7 @@ La tabla albumes incluye los siguientes campos:
 - genero: género musical
 - fecha_lanzamiento: fecha de lanzamiento del álbum
 - num_canciones: número total de canciones
-- es_explicit: indica si el contenido es explícito
+- es_explicit: indica si el contenido es explícito (valor booleano)
 
 ---
 
@@ -121,7 +122,7 @@ La aplicación utiliza consultas preparadas con PDO para evitar inyecciones SQL.
 
 ## Diseño responsive
 
-El diseño de la aplicación se ha realizado con Bootstrap 5, lo que permite que la interfaz se adapte correctamente a distintos tamaños de pantalla, incluyendo dispositivos móviles y tablets.
+El diseño de la aplicación se ha realizado con Bootstrap 5, lo que permite que la interfaz se adapte correctamente a distintos tamaños de pantalla, incluyendo dispositivos móviles y tablets. El estado del contenido explícito se representa de forma visual mediante colores para mejorar la experiencia de usuario.
 
 ---
 

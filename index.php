@@ -2,13 +2,9 @@
 require_once 'controllers/AlbumController.php';
 
 $controller = new AlbumController();
-
-$action = isset($_GET['action']) ? $_GET['action'] : 'index';
+$action = $_GET['action'] ?? 'index';
 
 switch ($action) {
-    case 'index':
-        $controller->index();
-        break;
     case 'create':
         $controller->create();
         break;
