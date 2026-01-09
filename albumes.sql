@@ -1,4 +1,4 @@
-USE login-php;
+USE `login-php`;
 
 DROP TABLE IF EXISTS albumes;
 
