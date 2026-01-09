@@ -38,7 +38,7 @@ class AlbumController
             $this->album->genero = trim($_POST['genero']);
             $this->album->fecha_lanzamiento = $_POST['fecha_lanzamiento'];
             $this->album->num_canciones = (int) $_POST['num_canciones'];
-            $this->album->es_explicit = isset($_POST['es_explicit']) ? 1 : 0;
+            $this->album->es_explicit = (int) $_POST['es_explicit'];
 
             if ($this->album->create()) {
                 header("Location: index.php?action=index&message=created");

@@ -69,21 +69,26 @@
                         required>
                 </div>
 
-                <!-- EXPLÍCITO -->
-                <div class="form-check mb-4">
-                    <input
-                        type="checkbox"
-                        name="es_explicit"
-                        value="1"
-                        class="form-check-input"
-                        id="explicit"
-                        <?= $album_data->es_explicit ? 'checked' : '' ?>>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Contenido explícito</label>
 
-                    <label
-                        class="form-check-label <?= $album_data->es_explicit ? 'text-danger' : 'text-success' ?>"
-                        for="explicit">
-                        <?= $album_data->es_explicit ? 'Contenido explícito' : 'Contenido no explícito' ?>
-                    </label>
+                    <div class="border rounded p-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="es_explicit" id="explicit_no" value="0"
+                                <?= $album_data->es_explicit == 0 ? 'checked' : ''; ?>>
+                            <label class="form-check-label text-success fw-semibold" for="explicit_no">
+                                No
+                            </label>
+                        </div>
+
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="radio" name="es_explicit" id="explicit_yes" value="1"
+                                <?= $album_data->es_explicit == 1 ? 'checked' : ''; ?>>
+                            <label class="form-check-label text-danger fw-semibold" for="explicit_yes">
+                                Sí
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
                 <button class="btn btn-success">Actualizar</button>

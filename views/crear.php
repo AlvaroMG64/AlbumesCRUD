@@ -40,9 +40,24 @@
                     <input type="number" name="num_canciones" class="form-control" min="1" required>
                 </div>
 
-                <div class="form-check mb-3">
-                    <input type="checkbox" name="es_explicit" value="1" class="form-check-input" id="explicit">
-                    <label class="form-check-label" for="explicit">Contenido explícito</label>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Contenido explícito</label>
+
+                    <div class="border rounded p-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="es_explicit" id="explicit_no" value="0" checked>
+                            <label class="form-check-label text-success fw-semibold" for="explicit_no">
+                                No
+                            </label>
+                        </div>
+
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="radio" name="es_explicit" id="explicit_yes" value="1">
+                            <label class="form-check-label text-danger fw-semibold" for="explicit_yes">
+                                Sí
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
                 <button class="btn btn-primary">Guardar</button>
