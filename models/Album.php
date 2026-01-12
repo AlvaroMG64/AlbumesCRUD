@@ -83,6 +83,10 @@ class Album
 
         $stmt = $this->conn->prepare($query);
 
+        $this->es_explicit = (int) $this->es_explicit;
+        $this->num_canciones = (int) $this->num_canciones;
+        $this->idAlbum = (int) $this->idAlbum;
+
         $stmt->bindParam(":titulo", $this->titulo);
         $stmt->bindParam(":artista", $this->artista);
         $stmt->bindParam(":genero", $this->genero);
