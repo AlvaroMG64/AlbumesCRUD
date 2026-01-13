@@ -20,7 +20,7 @@ class Album
     // READ ALL
     public function read()
     {
-        $query = "SELECT * FROM " . $this->table_name . " ORDER BY fecha_lanzamiento DESC";
+        $query = "SELECT * FROM " . $this->table_name . " ORDER BY titulo";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;

@@ -79,9 +79,31 @@
             <input type="number" name="num_canciones" id="num_canciones" class="form-control" min="1" required>
         </div>
 
-        <div class="form-check mb-3">
-            <input type="checkbox" name="es_explicit" class="form-check-input" id="es_explicit">
-            <label class="form-check-label" for="es_explicit">Contenido explícito</label>
+        <div class="mb-3">
+            <label class="form-label">Contenido explícito</label><br>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input"
+                    type="radio"
+                    name="es_explicit"
+                    id="explicit_no"
+                    value="0"
+                    checked>
+                <label class="form-check-label text-success" for="explicit_no">
+                    No
+                </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input"
+                    type="radio"
+                    name="es_explicit"
+                    id="explicit_yes"
+                    value="1">
+                <label class="form-check-label text-danger" for="explicit_yes">
+                    Sí
+                </label>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary btn-submit">Crear Álbum</button>
